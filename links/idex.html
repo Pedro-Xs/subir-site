@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploração Espacial</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+        }
+
+        .page-content {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="text-gray-100 min-h-screen">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+
+        <header class="bg-gray-800 p-4 mb-8 rounded-xl shadow-lg">
+
+            <h1 id="site-title" class="text-4xl font-extrabold text-teal-400 mb-4 text-center">
+                Exploração Espacial
+            </h1>
+
+            <nav class="flex justify-center space-x-4 md:space-x-8">
+
+                <a href="#" onclick="showPage('home')" class="nav-link" title="Ir para a página inicial"
+                    data-page="home">
+                    Início
+                </a>
+                <a href="#" onclick="showPage('missions')" class="nav-link" title="Ver as grandes conquistas espaciais"
+                    data-page="missions">
+                    Missões
+                </a>
+                <a href="#" onclick="showPage('planets')" class="nav-link" title="Conhecer alguns planetas de perto"
+                    data-page="planets">
+                    Planetas
+                </a>
+                <a href="#" onclick="showPage('contact')" class="nav-link" title="Falar com a equipe"
+                    data-page="contact">
+                    Contato
+                </a>
+            </nav>
+        </header>
+
+
+        <main class="bg-gray-900 p-6 md:p-10 rounded-xl shadow-2xl">
+
+
+            <div id="home" class="page-content active">
+
+
+                <h2 class="text-3xl font-semibold text-sky-400 mb-4 border-b border-sky-600 pb-2">
+                    A Jornada Começa Agora
+                </h2>
+
+
+                <p class="text-lg mb-6 leading-relaxed">
+                    A exploração espacial representa a curiosidade inata da humanidade e nossa busca incessante por
+                    conhecimento. Desde os primeiros passos na Lua até as sondas robóticas enviadas a planetas
+                    distantes, cada missão expande nossos horizontes e revela o nosso lugar no vasto cosmos.
+                </p>
+
+
+                <img id="home-image" src="img/img1.jpg" alt="Uma vista impressionante da Terra e estrelas" width="100%"
+                    height="500" class="w-full rounded-lg shadow-xl"
+                    onerror="this.onerror=null; this.src='https://placehold.co/1200x500/0f172a/ef4444?text=Falha+ao+Carregar+Imagem';" />
+
+                <p class="mt-6 text-sm text-gray-400 italic">
+                    <span class="font-bold">Atributo width="100%"</span> e a classe <span
+                        class="font-bold">w-full</span> garantem a responsividade da imagem.
+                </p>
+            </div>
+
+
+            <div id="missions" class="page-content">
+                <h2 class="text-3xl font-semibold text-lime-400 mb-4 border-b border-lime-600 pb-2">
+                    Grandes Conquistas
+                </h2>
+
+                <p class="text-lg mb-6">
+                    Estas são algumas das missões que redefiniram nossa compreensão do universo:
+                </p>
+
+                <div class="space-y-6">
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="text-xl font-bold text-lime-300">Programa Apollo</h3>
+                        <p class="mt-2 text-gray-300">
+                            A série de missões da NASA que culminou no pouso do homem na Lua, um feito que demonstrou o
+                            incrível potencial da engenharia humana.
+                        </p>
+
+                        <img src="img/img4.png" alt="Foguete Saturn V decolando" class="mt-3 w-48 rounded-md" />
+                    </div>
+
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="text-xl font-bold text-lime-300">Sondas Voyager</h3>
+                        <p class="mt-2 text-gray-300">
+                            Lançadas em 1977, as Voyagers continuam a transmitir dados do espaço interestelar, sendo os
+                            objetos humanos mais distantes da Terra.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="planets" class="page-content">
+                <h2 class="text-3xl font-semibold text-orange-400 mb-4 border-b border-orange-600 pb-2">
+                    Vizinhos Cósmicos
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-orange-300 mb-3">Marte (O Planeta Vermelho)</h3>
+                        <img src="img/img2.jpg" alt="Imagem de Marte com montanhas e solo rochoso" width="400"
+                            height="300" class="w-full h-auto rounded-lg mb-3 shadow-md" />
+                        <p class="text-gray-300">
+                            Marte é o foco principal da exploração atual. Suas evidências de água no passado o tornam o
+                            principal candidato para abrigar vida extraterrestre e para futuras colônias humanas.
+                        </p>
+                    </div>
+
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-orange-300 mb-3">Júpiter (O Gigante Gasoso)</h3>
+                        <img src="img/img3.jpg" alt="Imagem de Júpiter com a Grande Mancha Vermelha" width="400"
+                            height="300" class="w-full h-auto rounded-lg mb-3 shadow-md" />
+                        <p class="text-gray-300">
+                            O maior planeta do nosso sistema solar. Sua complexa atmosfera e vasta coleção de luas (como
+                            Ganimedes e Europa) são objetos de intensa pesquisa pela sonda Juno.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="contact" class="page-content">
+                <h2 class="text-3xl font-semibold text-blue-400 mb-4 border-b border-blue-600 pb-2">
+                    Entre em Contato
+                </h2>
+
+                <p class="text-lg mb-6">
+                    Tem perguntas sobre o universo ou sugestões para o site? Fale conosco!
+                </p>
+
+
+                <p class="mb-4">
+                    <a href="mailto:contato@exploracaoespacial.com" title="Clique para enviar um email"
+                        class="text-blue-400 hover:text-blue-300 transition duration-300 font-bold text-xl">
+                        Enviar Email para Contato
+                    </a>
+
+                    <span class="text-gray-400 block mt-2 text-sm">
+                        Para saber mais sobre a NASA, visite:
+                        <a href="https://www.nasa.gov" target="_blank" class="text-indigo-400 hover:underline"
+                            title="Visitar o site oficial da NASA">
+                            Site Oficial da NASA
+                        </a>
+                    </span>
+                </p>
+
+
+                <p class="mt-10 text-center text-sm text-gray-500">
+                    Este site é um projeto educacional para demonstração de atributos HTML.
+                </p>
+            </div>
+
+        </main>
+
+
+        <footer class="mt-8 p-4 text-center text-gray-500 text-sm border-t border-gray-700">
+            &copy; 2025 Exploração Espacial. Todos os direitos reservados.
+        </footer>
+
+    </div>
+
+
+    <script>
+
+        let currentPageId = 'home';
+
+
+        function showPage(pageId) {
+
+            const currentElement = document.getElementById(currentPageId);
+            if (currentElement) {
+
+                currentElement.classList.remove('active');
+            }
+
+
+            const nextElement = document.getElementById(pageId);
+            if (nextElement) {
+                nextElement.classList.add('active');
+            }
+
+
+            currentPageId = pageId;
+
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+
+                if (link.getAttribute('data-page') === pageId) {
+
+                    link.classList.add('text-white', 'border-b-2', 'border-teal-400', 'font-bold');
+                    link.classList.remove('text-gray-300', 'hover:text-teal-400');
+                } else {
+
+                    link.classList.remove('text-white', 'border-b-2', 'border-teal-400', 'font-bold');
+                    link.classList.add('text-gray-300', 'hover:text-teal-400');
+                }
+            });
+        }
+
+
+        window.onload = () => {
+            showPage('home');
+        };
+    </script>
+</body>
+
+</html>
